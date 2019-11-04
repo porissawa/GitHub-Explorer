@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getCommits, getBranches } from '../redux/actions/repoDetails';
+import { getUser } from '../redux/actions/user';
 import { H2, H3, P } from '../components/Text';
 import { size } from '../styles/theme';
 import { formatDate } from '../util/helpers';
@@ -74,6 +75,9 @@ const DetailsPage = ({ match }) => {
   useEffect(() => {
     dispatch(getCommits(username, repoName));
     dispatch(getBranches(username, repoName));
+    if (users.length < 1) {
+      dispatch(getUser(username));
+    }
   }, []);
 
   const baseUrl = 'https://github.com/';
@@ -85,9 +89,15 @@ const DetailsPage = ({ match }) => {
       .join('/');
 
   const getStars = () => {
-    return users
-      .filter(user => Object.getOwnPropertyNames(user)[0] === username)[0]
-      [username].find(el => el.name === repoName).stargazers_count;
+    if (users.length > 0) {
+      return (
+        users &&
+        users
+          .filter(user => Object.getOwnPropertyNames(user)[0] === username)[0]
+          [username].find(el => el.name === repoName).stargazers_count
+      );
+    }
+    return null;
   };
 
   return (
