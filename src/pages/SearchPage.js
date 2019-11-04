@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getUser } from '../redux/actions/user';
 import SearchBar from '../components/SearchBar';
-import { H1, H2, P } from '../components/Text';
+import { H2, P } from '../components/Text';
 import Repository from '../components/Repository';
 import EmptyState from '../components/EmptyState';
 import Header from '../components/Header';
@@ -70,9 +70,7 @@ function SearchPage({ history }) {
 
   const onSubmit = e => {
     e.preventDefault();
-    dispatch(getUser(query))
-      .then(() => console.log('sucesso'))
-      .catch(() => errorToast());
+    dispatch(getUser(query));
   };
 
   const renderList = list => {

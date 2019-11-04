@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { colors, size } from '../styles/theme';
-import { H3, P } from './Text';
+import { P } from './Text';
 
 const Container = styled(Link)`
   width: 100%;
