@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/repo" component={DetailsPage} />
+        <Route path="/repo/:username/:repoName" component={DetailsPage} />
         <Route exact path="/" component={SearchPage} />
       </Switch>
     </Router>

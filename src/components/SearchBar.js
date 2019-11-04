@@ -9,22 +9,20 @@ const ContainerBox = styled.form`
   align-items: center;
   width: 100%;
   height: 56px;
-  padding: 0 16px;
   background-color: white;
   box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
-  @media (max-width: 320px) {
-    padding: 8px;
-  }
 `;
 
 const SInput = styled.input`
   flex: 1;
-  padding: 0;
+  padding: 0 16px;
   border: 0 none;
   font-family: ${fonts.textFamily};
   font-size: 15px;
   line-height: 56px;
+  @media (max-width: 320px) {
+    padding: 8px;
+  }
 `;
 
 const ClearBtn = styled.button.attrs({
@@ -36,7 +34,9 @@ const ClearBtn = styled.button.attrs({
   border: 0 none;
   border-radius: 50%;
   margin-left: 16px;
+  margin-right: 16px;
   background: ${colors.grayLight};
+  color: white;
 `;
 
 const SearchBar = ({ className, onChange, onSubmit, onClear, placeholder, value }) => {

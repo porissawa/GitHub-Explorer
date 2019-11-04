@@ -19,9 +19,10 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
+    historyApiFallback: true,
     contentBase: './dist',
     hot: true
-  }
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
