@@ -23,7 +23,7 @@
   "homepage": "https://github.com/porissawa/GitHub-Explorer#readme",
   "dependencies": {
     "@babel/runtime": "^7.6.3",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-jest": "^24.9.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
